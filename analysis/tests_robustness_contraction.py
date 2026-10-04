@@ -88,26 +88,27 @@ def matched(gamma, q_rule, rise_bound, oscillation_test):
         print("  results missing")
         return
     M, F = [describe(d) for d in med], [describe(d) for d in fix]
-    q_rule(M, F)
+    q_rule(gamma, M, F)
     a1 = sum((not v["brake"]) and v["rise"] <= rise_bound for v in M)
-    print("damped Poisson without brake and rise <= %g: %s" % (rise_bound, "YES" if a1 == 2 else (
+    print("damped by %g, Poisson without brake and rise <= %g: %s" % (gamma, rise_bound, "YES" if a1 == 2 else (
         "NO" if all(v["brake"] and v["rise"] > rise_bound for v in M) else "grey")))
     a2 = sum(v["brake"] and v["rise"] >= 0.02 for v in F)
-    print("damped fixed with brake and rise >= 0.02: %s" % {2: "YES", 1: "grey", 0: "NO"}[a2])
+    print("damped by %g, fixed with brake and rise >= 0.02: %s" % (gamma, {2: "YES", 1: "grey", 0: "NO"}[a2]))
     if oscillation_test:
         a3 = sum(v["osc"] for v in F)
-        print("damped fixed oscillates: %s" % {2: "YES", 1: "grey", 0: "NO"}[a3])
+        print("damped by %g, fixed oscillates: %s" % (gamma, {2: "YES", 1: "grey", 0: "NO"}[a3]))
 
 
-def q_absolute(M, F):
+def q_absolute(gamma, M, F):
     k = sum(v["q"] >= 0.85 for v in M + F)
-    print("q >= 0.85 in all four: %s (%d of 4)" % ("YES" if k == 4 else "NO", k))
+    print("damped by %g, q >= 0.85 in all four: %s (%d of 4)" % (gamma, "YES" if k == 4 else "NO", k))
 
 
-def q_relative(M, F):
+def q_relative(gamma, M, F):
     gap = abs(np.mean([v["q"] for v in M]) - np.mean([v["q"] for v in F]))
     ok = all(v["q"] >= 0.80 for v in M + F) and gap <= 0.03
-    print("q >= 0.80 in all four and mean gap <= 0.03 (gap %.3f): %s" % (gap, "YES" if ok else "NO"))
+    print("damped by %g, q >= 0.80 in all four and mean gap <= 0.03 (gap %.3f): %s"
+          % (gamma, gap, "YES" if ok else "NO"))
 
 
 def main():

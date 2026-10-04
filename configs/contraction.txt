@@ -2,12 +2,12 @@ python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt
 python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --loss_every_loop 1 --update_scale 0.25 --tokens 1e+08 --micro 16 --seed 0
 python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --update_scale 0.1 --micro 16 --seed 0
 python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --update_scale 0.1 --micro 16 --seed 1
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --update_scale 0.25 --micro 16 --seed 0
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --update_scale 0.25 --micro 16 --seed 1
 python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --decay_init 0.95 --decay_frozen 1 --tokens 1e+08 --micro 8 --seed 0
 python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --update_scale 0.1 --tokens 1e+08 --micro 8 --seed 0
 python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --update_scale 0.1 --micro 8 --seed 0
 python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --update_scale 0.1 --micro 8 --seed 1
 python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --update_scale 0.25 --tokens 1e+08 --micro 8 --seed 0
-python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --micro 16 --update_scale 0.25 --seed 0
-python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --micro 16 --update_scale 0.25 --seed 1
-python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --micro 8 --update_scale 0.25 --seed 0
-python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --micro 8 --update_scale 0.25 --seed 1
+python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --update_scale 0.25 --micro 8 --seed 0
+python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --update_scale 0.25 --micro 8 --seed 1

@@ -10,7 +10,7 @@ depth-locked-dynamics/
 │   └── field_alignment/ the alignment of the loop field across models
 ├── analysis/      the tables and the registered tests, recomputed from results/
 ├── figures/       the figures of the paper, drawn from results/
-├── registry/      the 113 registered tests: threshold date, outcome, verdict, script
+├── registry/      the 117 registered tests: threshold date, outcome, verdict, script
 ├── configs/       the training command of every model
 ├── assets/        the logo
 └── tests/         an end-to-end smoke test on the CPU and the check of the phase estimator

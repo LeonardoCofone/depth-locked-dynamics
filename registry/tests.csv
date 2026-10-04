@@ -109,6 +109,10 @@ id,table,registered,test,outcome,verdict,script,output
 108,7,2026-10-03,"Ouro, update scaled by 1/2: loss at loop 8 within 0.02 of L_4 (2 of 2)",2.6B +0.004; 1.4B +0.035,grey,analysis/tests_controls.py,"Ouro, update scaled by 1/2: loss at loop 8"
 109,7,2026-10-03,"Ouro, same: loss at loop 8 below the trained loop at 8 (2 of 2)",2 of 2,YES,analysis/tests_controls.py,"Ouro, same: loss at loop 8 below"
 110,7,2026-10-03,"Ouro, same: |L^1/2|_2k-L_k<=0.05 for k=2,3,4 (2 of 2)",2.6B 0.010; 1.4B 0.100,grey,analysis/tests_controls.py,"Ouro, same: |L_2k - L_k|"
-111,7,2026-10-04,"Damped by 0.1, Poisson and fixed: q>=0.85 (4 of 4)",0.91 to 0.97,YES,analysis/tests_robustness_contraction.py,q >= 0.85 in all four
-112,7,2026-10-04,Damped Poisson: no brake and loss rise from r to 2r <=0.005 (2 of 2),"no brake 2 of 2; rise 0.014, 0.015",grey,analysis/tests_robustness_contraction.py,damped Poisson without brake
-113,7,2026-10-04,Damped fixed: brake and loss rise from r to 2r >=0.02 (2 of 2),"brake 0 of 2; rise 0.19, 0.23",NO,analysis/tests_robustness_contraction.py,damped fixed with brake
+111,7,2026-10-04,"Damped by 0.1, Poisson and fixed: q>=0.85 (4 of 4)",0.91 to 0.97,YES,analysis/tests_robustness_contraction.py,"damped by 0.1, q >= 0.85"
+112,7,2026-10-04,Damped Poisson: no brake and loss rise from r to 2r <=0.005 (2 of 2),"no brake 2 of 2; rise 0.014, 0.015",grey,analysis/tests_robustness_contraction.py,"damped by 0.1, Poisson without brake"
+113,7,2026-10-04,Damped fixed: brake and loss rise from r to 2r >=0.02 (2 of 2),"brake 0 of 2; rise 0.19, 0.23",NO,analysis/tests_robustness_contraction.py,"damped by 0.1, fixed with brake"
+114,7,2026-10-04,Damped by 0.25: q>=0.80 (4 of 4) and mean q of Poisson and fixed within 0.03,0.84 to 0.93; gap 0.08,NO,analysis/tests_robustness_contraction.py,"damped by 0.25, q >= 0.80"
+115,7,2026-10-04,"Damped by 0.25, Poisson: no brake and loss rise from r to 2r <=0.02 (2 of 2)","no brake 2 of 2; rise 0.005, 0.008",YES,analysis/tests_robustness_contraction.py,"damped by 0.25, Poisson without brake"
+116,7,2026-10-04,"Damped by 0.25, fixed: brake and loss rise from r to 2r >=0.02 (2 of 2)","brake 0 of 2; rise 0.12, 0.12",NO,analysis/tests_robustness_contraction.py,"damped by 0.25, fixed with brake"
+117,7,2026-10-04,"Damped by 0.25, fixed: oscillation (2 of 2)",0 of 2,NO,analysis/tests_robustness_contraction.py,"damped by 0.25, fixed oscillates"

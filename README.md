@@ -31,7 +31,7 @@ python -m analysis.tests_controls         # registered tests on the controls
 python figures/make_figures.py            # the figures, in figures/out/
 ```
 
-`registry/tests.csv` lists the 113 registered tests with the date their threshold was written, the outcome, the
+`registry/tests.csv` lists the 117 registered tests with the date their threshold was written, the outcome, the
 verdict and the script that recomputes it. Run any script in `analysis/` to see its tests.
 
 ## Retrain and remeasure
