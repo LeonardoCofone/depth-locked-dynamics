@@ -1,0 +1,18 @@
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 10 --mean_bptt 10 --seed 0
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 10 --mean_bptt 10 --seed 1
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 12 --mean_bptt 12 --micro 16 --seed 1
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 16 --mean_bptt 16 --micro 16 --seed 1
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 20 --mean_bptt 20 --micro 8 --seed 0
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 20 --mean_bptt 20 --micro 8 --seed 1
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 24 --mean_bptt 24 --micro 8 --seed 0
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 24 --mean_bptt 24 --micro 8 --seed 1
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 6 --mean_bptt 6 --seed 0
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 6 --mean_bptt 6 --seed 1
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 4 --seed 0
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 4 --seed 1
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --loss_every_loop 1 --micro 16 --seed 0
+python -m loopedlm.train --preset base --sampling fixed --mean_rec 8 --mean_bptt 8 --loss_every_loop 1 --micro 16 --seed 1
+python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --micro 8 --seed 0
+python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 32 --micro 8 --seed 1
+python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 4 --decay_init 0.9 --seed 0
+python -m loopedlm.train --preset base --sampling poisson --mean_rec 8 --mean_bptt 4 --decay_init 0.9 --seed 1
