@@ -21,6 +21,8 @@ three models of 472M parameters. The sets are defined in `common.py`.
 | `tests_landing.py` | Brake on held-out models, path length, slow phase and final arc, step growth, non-normality, truncated models, log-stretch after `r`, angular velocity at landing | Tables 6 and 7 |
 | `tests_geometry.py` | Planar steps, turns per period, damping of the state, quadratic landing, tests per token | Table 6 |
 | `tests_public.py` | Parcae, Huginn and Ouro | Table 6 |
+| `tests_spectrum.py` | Phase of the leading complex Ritz pair at `2r` against the period of the loss; complex Ritz values of the random-depth models | Table 6 |
+| `tests_speed.py` | Speed of the step after `r` against `1/r`, and the period from that speed | Table 6 |
 | `tests_scaling.py` | Collapse of step, angle and log-stretch before `r`; sum of the log-stretch; period from the phase | Tables 6 and 7 |
 | `tests_plane_dynamics.py` | Period from 8 sequences, rotation at the fixed point and at landing, paths that make the rotation, rescaled update | Table 7 |
 | `tests_euler.py` | Decay scale, exact phase of the rescaled update, stability of the doubled step, continuous limit, Richardson, cancellation | Table 7 |

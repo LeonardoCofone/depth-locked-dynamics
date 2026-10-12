@@ -17,7 +17,9 @@ def main():
               "%.3f" % (d, info[d]["L_r"], am, rel, info[d]["minima"][:6], info[d]["rise"], info[d]["e2"]))
     ref = {d: float(loss_curve(REFERENCE[d])[R]) for d in SCALE}
     k = sum(info[d]["L_r"] < ref[d] for d in SCALE)
-    print("472M: L_r below the 114M model (3 of 3): %d of 3 -> %s" % (k, "YES" if k == 3 else "NO"))
+    print("472M: L_r below the 114M model (3 of 3): %s against %s, %d of 3 -> %s" % (
+        ", ".join("%.4f" % info[d]["L_r"] for d in SCALE), ", ".join("%.4f" % ref[d] for d in SCALE), k,
+        "YES" if k == 3 else "NO"))
     k = sum(abs(info[d]["am"] - R) <= 1 for d in FIXED)
     print("472M fixed: lowest lambda within one loop of r (2 of 2): %d of 2 -> %s" % (k, two_seeds(k, 2)))
     print("472M Poisson: lowest lambda not within one loop of r: loop %d -> %s" % (

@@ -1,6 +1,6 @@
 # registry/
 
-`tests.csv` lists the 123 registered tests of the paper. A test is registered when its threshold was written in a
+`tests.csv` lists the 127 registered tests of the paper. A test is registered when its threshold was written in a
 dated log before the data it concerns were examined; thresholds were never changed afterwards. A verdict is `grey` when
 the result falls between the thresholds for yes and no.
 
@@ -15,9 +15,9 @@ the result falls between the thresholds for yes and no.
 | `script` | The script in `analysis/` that recomputes the outcome from `results/`. |
 | `output` | The beginning of the line (or lines, separated by `\|`) that the script prints for this test. |
 
-Totals: 66 YES, 40 NO, 17 grey.
+Totals: 67 YES, 42 NO, 18 grey.
 
-For 94 tests the script prints the verdict next to the outcome; for the other 29 it prints the outcome, and the
+For 98 tests the script prints the verdict next to the outcome; for the other 29 it prints the outcome, and the
 verdict is the one in the `verdict` column.
 
 Two thresholds are applied with a detail fixed when they were first evaluated: the restart of the decoded loop index

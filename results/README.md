@@ -25,6 +25,7 @@ scale check (three models of 472M parameters trained on 3B tokens, `_d1792`).
 | `scaled_update.json` | `measure.scaled_update` | Loss of `r' = r, 2r, 4r, 8r` loops with the update scaled by `r/r'`, distances between their states, Richardson extrapolation, split of the step into injection and core. |
 | `doubled_update.json` | `measure.doubled_update` | Loss when the update is doubled after `k` trained loops. |
 | `downstream.json` | `measure.downstream` | Accuracy per task and loop, trained and with the update scaled by 1/2. |
+| `ritz.json` | `measure.ritz` | `k[loop]`: Ritz values `[real, imag]` sorted by modulus and their residuals `res`; first grid only. |
 | `robustness.json` | `measure.robustness` | Log-stretch with 16 and 32 directions and step geometry on new sequences. |
 
 Indices: in `curves.json`, `per_k[k]` is the state after `k` loops (`k = 0` is the initial state). In the other files

@@ -27,12 +27,13 @@ python -m measure.lyapunov --runs runs --data data
 | `field_alignment.py` | `results/field_alignment/` | Aligns the states of two models with an affine map and compares their rescaled steps at the same rescaled time. |
 | `prepare_downstream.py` | `data/downstream_tasks.jsonl` | Samples 1000 examples each of LAMBADA, HellaSwag, ARC-Easy and PIQA. |
 | `downstream.py` | `downstream.json` | Zero-shot accuracy of every loop, for the trained loop and the update scaled by 1/2. |
+| `ritz.py` | `ritz.json` | Ritz values of the Jacobian of one loop at loops `r/2`, `r`, `2r` and `4r` from 48 Arnoldi steps on 2 sequences of 256 tokens, with the residual of each value. |
 | `robustness.py` | `robustness.json` | The brake with 16 and 32 directions and the step geometry on new validation sequences. |
 | `public_random_depth.py` | `results/public/<model>/public_dynamics.json` | The same measures on the released Parcae and Huginn models (random depth). Needs their weights and, for Parcae, its source repository. |
 | `public_ouro.py` | `results/public/<model>/ouro_dynamics.json` | The same measures on Ouro 1.4B and 2.6B. Needs `transformers` 4.5x (tested with 4.56.2). |
 | `public_ouro_scaled.py` | `results/public/<model>/ouro_scaled.json` | Ouro with its update scaled by `4/r'`. |
 
-`lyapunov.py`, `non_normality.py`, `robustness.py` and the plane Jacobians of `plane_dynamics.py` run in float64. Only
+`lyapunov.py`, `non_normality.py`, `ritz.py`, `robustness.py` and the plane Jacobians of `plane_dynamics.py` run in float64. Only
 `curves.py` (like training) enables TF32 matrix products on a GPU; the other scripts keep full float32, as for the
 numbers of the paper. On one GPU the full set of measurements of one model takes 10 to 20 minutes; `plane_dynamics.py`
 and `downstream.py` are the slowest.
