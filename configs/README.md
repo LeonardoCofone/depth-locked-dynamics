@@ -8,6 +8,7 @@ results folder.
 | `grid.txt` | The first grid (33 models): fixed depth `r = 2..16` with full or truncated backpropagation, random depth, Muon, initial decay 0.7 and 0.9, 1.5B tokens, width 768. |
 | `controls.txt` | The controls trained after their thresholds were written (18 models): fixed depth at `r = 6, 10, 20, 24` and second seeds, random depth through every loop, truncation to 4, loss at every loop, random depth with decay 0.9. |
 | `contraction.txt` | The contraction experiments: the 0.1B-token pilot and the recipes with the update damped by 0.1 and 0.25. |
+| `scale.txt` | The scale check (3 models): fixed depth 8 (two seeds) and random depth through every loop, at 472M parameters and 3B tokens. |
 
 To run one file:
 

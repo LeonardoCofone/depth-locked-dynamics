@@ -100,7 +100,7 @@ def main():
     ap.add_argument("--subset", default="sample-10BT")
     ap.add_argument("--tokenizer_docs", type=float, default=50000)
     ap.add_argument("--vocab", type=int, default=32768)
-    ap.add_argument("--train_tokens", type=float, default=1.5e9)
+    ap.add_argument("--train_tokens", type=float, default=3e9)
     ap.add_argument("--val_tokens", type=float, default=2e7)
     a = ap.parse_args()
     prepare(a.out, a.subset, a.tokenizer_docs, a.vocab, a.train_tokens, a.val_tokens)

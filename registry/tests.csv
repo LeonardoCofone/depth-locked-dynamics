@@ -1,118 +1,124 @@
 id,table,registered,test,outcome,verdict,script,output
-1,5,2026-09-30,Brake within one loop of r on held-out models,"3 of 3 (loops 8, 16, 7)",YES,analysis/tests_landing.py,held-out fixed_r
-2,5,2026-09-30,Contraction rate constant across data,"q=0.95 at 1.5B, outside [0.89,0.94]",NO,analysis/tests_landing.py,contraction rate constant across data
-3,5,2026-09-30,"Same path length at 1.5B (ratio r=16/r=8 in [0.85,1.15])",1.04,YES,analysis/tests_landing.py,same path length at 1.5B tokens
-4,5,2026-10-01,Oscillation: >=80% of uninspected fixed models with two minima,11 of 16,NO,analysis/tests_wave.py,oscillation: uninspected full-backprop fixed models
-5,5,2026-10-01,Amplitude grows with data,"0.24->0.50, 0.19->0.51",YES,analysis/tests_wave.py,amplitude grows with data
-6,5,2026-10-01,"q and P associated (Spearman >=0.7, r=8)",0.78,YES,analysis/tests_wave.py,q and P associated within r = 8
-7,5,2026-10-01,"Brake and amplitude, all fixed models (<=-0.6)","0.00 (within r=8: -0.91, exploratory)",NO,analysis/tests_wave.py,"brake and amplitude, all full-backprop fixed"
-8,5,2026-10-01,Curves collapse in (k-r)/r,0.81 against 0.46 (partly post hoc),YES,analysis/tests_wave.py,curves collapse in (k - r)/r
-9,5,2026-10-01,State: second loss minimum on a minimum of ||s_k-s_r||,12 of 15,YES,analysis/tests_wave.py,state: second loss minimum on a minimum
-10,5,2026-10-01,State: closer to loops 1..r at loss minima than at maxima,15 of 15,YES,analysis/tests_wave.py,state: closer to loops 1..r at loss minima
-11,5,2026-10-01,State: closer to s_r after one period than after half,14 of 15,YES,analysis/tests_wave.py,state: closer to s_r after one period
-12,5,2026-10-01,State: detrended loss and distance oscillate together (|corr|>=0.6),15 of 15,YES,analysis/tests_wave.py,state: detrended loss and distance oscillate together
-13,5,2026-10-01,State: a linear readout of the state follows the loss (Pearson >=0.7),8 of 15,grey,analysis/tests_wave.py,state: a linear readout of the state
-14,5,2026-10-01,Loop decoder R^2>=0.9,2 of 15,NO,analysis/tests_decoder.py,loop decoder R^2 >= 0.9
-15,5,2026-10-01,Decoder gap is not trivial (loops 1..4),0.83 against -0.73,YES,analysis/tests_decoder.py,decoder on loops 1..4
-16,5,2026-10-01,Decoded index restarts / step profile repeats / minima match the loss,"8, 1, 2 of 15",NO,analysis/tests_decoder.py,decoded index restarts | step profile repeats with period r | minima of the decoded index
-17,5,2026-10-01,Loss decrease accelerates before r,4 of 4,YES,analysis/tests_landing.py,loss decrease accelerates before r
-18,5,2026-10-01,State returns to the slow phase,0 of 15,NO,analysis/tests_landing.py,state returns to the slow phase
-19,5,2026-10-01,Amplitude follows the acceleration of the loss,0.79,YES,analysis/tests_landing.py,amplitude follows the acceleration of the loss
-20,5,2026-10-01,"Excursion ranks with the step at loop r, as a linear bound predicts (Spearman >=0.6)",0.43,grey,analysis/tests_landing.py,excursion after r ranks with the step at loop r
-21,5,2026-10-01,Step grows before r in fixed models (>=70%),6 of 14; Poisson monotone 6 of 6,NO,analysis/tests_landing.py,step grows before r in fixed models
-22,5,2026-10-01,Fixed more non-normal than Poisson at r-1,0 of 14,NO,analysis/tests_landing.py,fixed more non-normal than every Poisson
-23,5,2026-10-01,Non-normality follows the acceleration of the loss,0.39,grey,analysis/tests_landing.py,non-normality at r - 1 follows the acceleration
-24,5,2026-10-01,"Brake and amplitude, unused truncated models (<=-0.6)",+0.66 (6 models),NO,analysis/tests_landing.py,brake and amplitude in the truncated models
-25,5,2026-10-01,Per token: median correlation with the average oscillation >=0.5,3 of 15,grey,analysis/tests_geometry.py,per token: median correlation
-26,5,2026-10-01,Per token: top 10% of tokens carry <=50% of the amplitude,0 of 15 (>=80%: 8 of 15),grey,analysis/tests_geometry.py,per token: top 10%
-27,5,2026-10-01,"Non-normality minimum within max(2,r/4) of r, all loops (>=70%)",12 of 14; Poisson flat 6 of 6,YES,analysis/tests_landing.py,"non-normality minimum within max(2, r/4)"
-28,5,2026-10-01,Editing the temporal coordinate moves the landing (>=70%),0 of 12 (no shift in 12 of 12),NO,analysis/tests_decoder.py,editing the temporal coordinate moves the landing
-29,5,2026-10-01,Random edits of the same size leave the landing in place,48 of 48,YES,analysis/tests_decoder.py,random edits of the same size
-30,5,2026-10-01,"Loss after r quadratic in the displacement, R^2>=0.8 (>=70%)",10 of 15,grey,analysis/tests_geometry.py,loss after r quadratic in the displacement
-31,5,2026-10-01,"Steps after r planar (two modes >=80% of energy, >=70%)",15 of 15,YES,analysis/tests_geometry.py,steps after r planar
-32,5,2026-10-01,"First loss minimum after one full turn of the step (+-30%, >=70%)",13 of 15,YES,analysis/tests_geometry.py,first loss minimum after one full turn
-33,5,2026-10-01,"Period from the angular velocity before r (+-30%, >=70%)",7 of 15,NO,analysis/tests_geometry.py,period from the angular velocity before r
-34,5,2026-10-01,Damping of the state oscillation per period equals rho^P (Spearman >=0.6),0.27,NO,analysis/tests_geometry.py,damping of the state oscillation per period
-35,5,2026-10-01,Ouro: brake within one loop of 4,"2 of 2 (loops 3, 4)",YES,analysis/tests_public.py,brake within one loop of 4
-36,5,2026-10-01,Ouro: loss lowest at 3 to 5 and higher at 8,2 of 2,YES,analysis/tests_public.py,loss lowest at 3 to 5 and higher at 8
-37,5,2026-10-01,Ouro: loss minimum in loops 9 to 13,1.4B by the letter (dip 0.009); 2.6B no,grey,analysis/tests_public.py,loss minimum in loops 9 to 13
-38,5,2026-10-01,Ouro: non-normality minimum within 2 loops of 4,0 of 2,NO,analysis/tests_public.py,non-normality minimum within 2 loops of 4
-39,5,2026-10-01,Ouro: steps after 4 planar (>=80% in two modes),"0 of 2 (76%, 78%)",NO,analysis/tests_public.py,steps after 4 planar
-40,5,2026-10-01,Public random-depth: no brake at mean r (>=4 of 5),5 of 5,YES,analysis/tests_public.py,no brake at the mean depth
-41,5,2026-10-01,Public random-depth: loss after mean r moves <0.02,5 of 5,YES,analysis/tests_public.py,loss after the mean depth moves
-42,5,2026-10-01,Public random-depth: state within 5% of s_mean r,5 of 5,YES,analysis/tests_public.py,state within 5% of the state at the mean depth
-43,5,2026-10-01,Public random-depth: non-normality varies <0.1 around mean r,4 of 5 (1.3B: 0.16),YES,analysis/tests_public.py,non-normality varies < 0.1 around the mean depth
-44,5,2026-10-01,Turning angle before r collapses as r alpha(k/r) (CV <=0.25 and <= half of unscaled),0.07 against 0.24,YES,analysis/tests_scaling.py,turning angle before r as r*alpha
-45,5,2026-10-01,Step before r collapses as r n(k/r) (same rule),0.12 against 0.41,YES,analysis/tests_scaling.py,step before r as r*n
-46,5,2026-10-01,Period from the phase defined (Theta=2pi within 3r; >=80%),22 of 24 (not decay 0.9),YES,analysis/tests_scaling.py,period from the phase defined
-47,5,2026-10-01,Phase period scales with r in the baseline (CV of P_Theta/r<=0.2),0.16,YES,analysis/tests_scaling.py,phase period scales with r
-48,5,2026-10-01,q and P_Theta/r associated (Spearman >=0.6; same models as the exploratory 0.71),0.73,YES,analysis/tests_scaling.py,q and P_Theta/r associated
-49,6,2026-10-02,Log-stretch before r collapses as r lambda(k/r) (same rule as the steps),0.09 against 0.20,YES,analysis/tests_scaling.py,log-stretch before r as r*lambda
-50,6,2026-10-02,Log-stretch summed over loops r/2..r constant in r (CV <=0.15 and <= half of last four loops),0.02 against 0.22,YES,analysis/tests_scaling.py,log-stretch summed over loops
-51,6,2026-10-02,Log-stretch after r collapses as r lambda(k/r) (same rule),0.11 against 0.18,NO,analysis/tests_landing.py,log-stretch after r collapses
-52,6,2026-10-02,"Period from the angular velocity at landing (+-30%, >=70%)",9 of 22 (median ratio 0.60),NO,analysis/tests_landing.py,period from the angular velocity at landing
-53,6,2026-10-02,"Non-normality follows the log-stretch loop by loop (Spearman >=0.6, >=70%)",6 of 15,NO,analysis/tests_landing.py,non-normality follows the log-stretch loop by loop
-54,6,2026-10-02,Period from the phase on 8 sequences within 15% of 4 sequences (>=80%),22 of 22,YES,analysis/tests_plane_dynamics.py,period from the phase on 8 sequences
-55,6,2026-10-02,"Period from the slowest mode of the Jacobian at the fixed point (+-30%, >=70%)",7 of 22,NO,analysis/tests_plane_dynamics.py,period from the slowest mode
-56,6,2026-10-02,Rotation angle at the fixed point collapses as r theta^* (CV <=0.2 and <= half),0.17 against 0.46,YES,analysis/tests_plane_dynamics.py,rotation angle at the fixed point collapses
-57,6,2026-10-02,Switching off the MLP path halves the rotation angle at the fixed point (>=70%),22 of 24,YES,analysis/tests_plane_dynamics.py,switching off the MLP path
-58,6,2026-10-02,Angle removed with the MLP path collapses as r Delta theta (CV <=0.25),0.30,grey,analysis/tests_plane_dynamics.py,angle removed with the same path
-59,6,2026-10-02,"Update scaled by gamma after r stretches the period by 1/gamma (+-25%, >=70%)",16 of 22,YES,analysis/tests_plane_dynamics.py,update scaled by gamma after r stretches the period
-60,6,2026-10-02,Update scaled by 1/2 from the start: loss at 2r within 0.02 of L_r (>=70%),16 of 21,YES,analysis/tests_plane_dynamics.py,update scaled by 1/2 from the start
-61,6,2026-10-02,Update scaled by 2 from the start: loss at r/2 below the trained loop (>=70%),1 of 21,NO,analysis/tests_plane_dynamics.py,update scaled by 2 from the start
-62,6,2026-10-02,Update scaled by 2/3 from the start: loss at 3r/2 within 0.02 of L_r (>=70%),17 of 21,YES,analysis/tests_plane_dynamics.py,update scaled by 2/3 from the start
-63,6,2026-10-02,Freezing the attention weights after r halves the rotation (>=70%),0 of 24,NO,analysis/tests_plane_dynamics.py,freezing the attention weights after r
-64,6,2026-10-02,"Period is one turn at the Jacobian's rotation at landing (+-30%, >=70%)",17 of 22,YES,analysis/tests_plane_dynamics.py,period is one turn at the Jacobian's rotation
-65,6,2026-10-02,"Decay carries the 1/r scale (slope of log(1-mean A) against log r in [-1.3,-0.7])",-0.22,NO,analysis/tests_euler.py,decay carries the 1/r scale
-66,6,2026-10-02,"Exact phase arg(1+gamma(mu-1)) beats 1 for the period ratio (>=2/3, median error <=0.08)","30 of 42, 0.05",YES,analysis/tests_euler.py,exact phase arg(1 + gamma(mu - 1))
-67,6,2026-10-02,"Doubled step unstable in the plane at r/2 (|2mu-1|>1 where the halved loop fails, >=2/3)",0 of 21,NO,analysis/tests_euler.py,doubled step unstable in the plane
-68,6,2026-10-02,Trained loop within 0.02 of its continuous limit (r'=8r; >=2/3),5 of 21,NO,analysis/tests_euler.py,trained loop within 0.02 of its continuous limit
-69,6,2026-10-02,"Same limit curve for r=8,12,16 (max deviation <=0.05)","0.017; yes by the letter, but not informative: normalised by the loss of the random initial state",YES,analysis/tests_euler.py,"same limit curve for r = 8, 12, 16"
-70,6,2026-10-02,Richardson extrapolation lowers the loss by >=0.01 (>=2/3),0 of 21,NO,analysis/tests_euler.py,Richardson extrapolation lowers the loss
-71,6,2026-10-02,"Small step from cancellation (net/first part <=0.5, cosine <=-0.5; >=2/3)",14 of 21,YES,analysis/tests_euler.py,small step from cancellation
-72,6,2026-10-02,Same field across depths: direction (>=0.8 of seed-to-seed cosine and >= null +0.2; >=2/3),5 of 9 (no cell below half),grey,analysis/tests_field.py,"same field across depths 8, 12, 16, direction"
-73,6,2026-10-02,"Same field across depths: norm after the factor r (ratio in [0.75,1.33]; >=2/3)",9 of 9,YES,analysis/tests_field.py,"same field across depths 8, 12, 16, norm"
-74,6,2026-10-03,Update doubled after two trained loops: loss at t=1 within 0.10 of L_r (>=2/3),0 of 21,NO,analysis/tests_scaled_update.py,update doubled after two trained loops
-75,6,2026-10-03,"Same, below the trained loop stopped at the same loop (>=2/3)",4 of 21,NO,analysis/tests_scaled_update.py,"same, below the trained loop stopped"
-76,6,2026-10-03,"Same, below the update doubled from the start (>=2/3)",19 of 21,YES,analysis/tests_scaled_update.py,"same, below the update doubled from the start"
-77,6,2026-10-03,"Downstream: mean accuracy at the loss peak in (r,2r] at least one point below loop r (>=2/3)",11 of 21,grey,analysis/tests_scaled_update.py,"accuracy at the loss peak in (r, 2r]"
-78,6,2026-10-03,Downstream: accuracy at the next loss minimum 0.5 points above the peak (>=2/3),5 of 15,NO,analysis/tests_scaled_update.py,accuracy at the next loss minimum
-79,6,2026-10-03,Downstream: update scaled by 1/2 keeps the accuracy at 2r within one point of loop r (>=2/3),20 of 21,YES,analysis/tests_scaled_update.py,update scaled by 1/2 keeps the accuracy
-80,6,2026-10-03,Downstream: Poisson accuracy varies by at most one point over loops 8 to 32 (>=5 of 6),6 of 6,YES,analysis/tests_scaled_update.py,Poisson accuracy varies by at most one point
-81,6,2026-10-03,Update scaled by 1/2: state at 2r closer to s_r than the trained loop at 2r (>=70%),21 of 21,YES,analysis/tests_scaled_update.py,update scaled by 1/2: state at 2r closer to s_r
-82,6,2026-10-03,Same: state at 2r within one trained step of s_r (>=70%),17 of 21,YES,analysis/tests_scaled_update.py,same: state at 2r within one trained step
-83,6,2026-10-03,"Same: period after landing, in units of r', within 25% of the trained one in units of r (>=70%)",13 of 18,YES,analysis/tests_scaled_update.py,same: period after landing in units of r'
-84,7,2026-10-03,Poisson through every loop: brake at 8 and oscillation (2 of 2),"brake 0 of 2, oscillation 0 of 2",NO,analysis/tests_controls.py,Poisson through every loop
-85,7,2026-10-03,Fixed r=8 truncated to 4: brake within one loop of r (2 of 2),1 of 2,grey,analysis/tests_controls.py,fixed r=8 truncated to 4
-86,7,2026-10-03,Loss at every loop: brake (2 of 2) and no oscillation,brake 0 of 2,NO,analysis/tests_controls.py,loss at every loop: brake
-87,7,2026-10-03,"Poisson with decay 0.9 reaches the contraction of the fixed models (q>=0.76, 2 of 2)","q=0.65, 0.66",NO,analysis/tests_controls.py,Poisson with decay 0.9 reaches q
-88,7,2026-10-03,New fixed: brake within one loop of r (>=90%),"7 of 10 (not r=24, r=20 s1)",NO,analysis/tests_controls.py,new fixed: lowest lambda within one loop of r
-89,7,2026-10-03,"Exponents of step, angle, log-stretch over r=6..24: 90% interval contains one","1.36, 0.60, 0.67; none",NO,analysis/tests_controls.py,exponent of the step | exponent of the angle | exponent of the log-stretch
-90,7,2026-10-03,"Step before r collapses as r n(k/r), r=6..24 (CV <=0.25 and <= half)",0.18 against 0.57,YES,analysis/tests_controls.py,collapse of r*step
-91,7,2026-10-03,"Angle before r collapses as r alpha(k/r), r=6..24 (same rule)",0.25 against 0.31,NO,analysis/tests_controls.py,collapse of r*angle
-92,7,2026-10-03,"Log-stretch before r collapses as r lambda(k/r), r=6..24 (same rule)",0.16 against 0.30,NO,analysis/tests_controls.py,collapse of r*log-stretch
-93,7,2026-10-03,"New fixed: P_Theta/r in [1.6,2.5] (>=2/3 of those with P_Theta)",2 of 6,NO,analysis/tests_controls.py,"new fixed: P_Theta/r in [1.6, 2.5]"
-94,7,2026-10-03,"All baseline fixed, r=4..24: CV of P_Theta/r<=0.25",0.22 (14 models),YES,analysis/tests_controls.py,all baseline fixed r=4..24: CV of P_Theta/r
-95,7,2026-10-03,"New fixed: update scaled by 1/2, loss at 2r within 0.02 of L_r (>=2/3)",7 of 10,YES,analysis/tests_controls.py,new fixed: update scaled by 1/2
-96,7,2026-10-03,"Baseline fixed, r=4..24: rphi_r constant (CV <=0.20; no above 0.30)",0.28,grey,analysis/tests_controls.py,r*phi_r constant over 18 baseline
-97,7,2026-10-03,"New fixed: rphi_r in [2.4,4.0] (>=2/3)",8 of 10,YES,analysis/tests_controls.py,"new fixed: r*phi_r in [2.4, 4.0]"
-98,7,2026-10-03,New fixed: one turn at phi_r within 30% of P_Theta (>=70%),4 of 7,NO,analysis/tests_controls.py,new fixed: one turn at phi_r
-99,7,2026-10-03,"New fixed: without attention and without MLP, each leaves 0.2 to 0.7 of phi_r (>=2/3)",9 of 10,YES,analysis/tests_controls.py,new fixed: without attention and without MLP
-100,7,2026-10-03,Same steps across neighbouring depths 6..24: direction (>=0.8 of seed-to-seed cosine and >= null +0.2; >=2/3),21 of 36 (no cell below half),grey,analysis/tests_field.py,"same field across neighbouring depths 6..24, direction"
-101,7,2026-10-03,"Same steps across neighbouring depths: norm after the factor r (ratio in [0.75,1.33]; >=2/3)",31 of 36,YES,analysis/tests_field.py,"same field across neighbouring depths 6..24, norm"
-102,7,2026-10-04,"New sequences: lowest lambda_k within one loop of r (fixed, r<=16, >=6/7; none in the 3 controls)",7 of 7; controls 3 of 3,YES,analysis/tests_robustness_contraction.py,"new sequences, lowest lambda within one loop"
-103,7,2026-10-04,32 directions: lowest lambda_k within one loop of that with 16 (>=11/13),12 of 13,YES,analysis/tests_robustness_contraction.py,"32 directions, lowest lambda"
-104,7,2026-10-04,New sequences: two leading modes >=80% and third mode <=10% after r (>=4/5 each),5 of 5; 5 of 5,YES,analysis/tests_robustness_contraction.py,"new sequences, two modes >= 80%"
-105,7,2026-10-04,P_Theta from windows to 3r and to 6r within 15% of the window to 4r (>=2/3),5 of 5; 8 of 8,YES,analysis/tests_robustness_contraction.py,P_Theta from the window r_3r | P_Theta from the window r_6r
-106,7,2026-10-04,P_Theta on new sequences within 15% of the original ones (>=2/3),8 of 8,YES,analysis/tests_robustness_contraction.py,P_Theta on new sequences
-107,7,2026-10-04,New sequences: same oscillation verdict (>=10/13; no control oscillates),12 of 13; 0 of 3,YES,analysis/tests_robustness_contraction.py,"new sequences, same oscillation verdict"
-108,7,2026-10-03,"Ouro, update scaled by 1/2: loss at loop 8 within 0.02 of L_4 (2 of 2)",2.6B +0.004; 1.4B +0.035,grey,analysis/tests_controls.py,"Ouro, update scaled by 1/2: loss at loop 8"
-109,7,2026-10-03,"Ouro, same: loss at loop 8 below the trained loop at 8 (2 of 2)",2 of 2,YES,analysis/tests_controls.py,"Ouro, same: loss at loop 8 below"
-110,7,2026-10-03,"Ouro, same: |L^1/2|_2k-L_k<=0.05 for k=2,3,4 (2 of 2)",2.6B 0.010; 1.4B 0.100,grey,analysis/tests_controls.py,"Ouro, same: |L_2k - L_k|"
-111,7,2026-10-04,"Damped by 0.1, Poisson and fixed: q>=0.85 (4 of 4)",0.91 to 0.97,YES,analysis/tests_robustness_contraction.py,"damped by 0.1, q >= 0.85"
-112,7,2026-10-04,Damped Poisson: no brake and loss rise from r to 2r <=0.005 (2 of 2),"no brake 2 of 2; rise 0.014, 0.015",grey,analysis/tests_robustness_contraction.py,"damped by 0.1, Poisson without brake"
-113,7,2026-10-04,Damped fixed: brake and loss rise from r to 2r >=0.02 (2 of 2),"brake 0 of 2; rise 0.19, 0.23",NO,analysis/tests_robustness_contraction.py,"damped by 0.1, fixed with brake"
-114,7,2026-10-04,Damped by 0.25: q>=0.80 (4 of 4) and mean q of Poisson and fixed within 0.03,0.84 to 0.93; gap 0.08,NO,analysis/tests_robustness_contraction.py,"damped by 0.25, q >= 0.80"
-115,7,2026-10-04,"Damped by 0.25, Poisson: no brake and loss rise from r to 2r <=0.02 (2 of 2)","no brake 2 of 2; rise 0.005, 0.008",YES,analysis/tests_robustness_contraction.py,"damped by 0.25, Poisson without brake"
-116,7,2026-10-04,"Damped by 0.25, fixed: brake and loss rise from r to 2r >=0.02 (2 of 2)","brake 0 of 2; rise 0.12, 0.12",NO,analysis/tests_robustness_contraction.py,"damped by 0.25, fixed with brake"
-117,7,2026-10-04,"Damped by 0.25, fixed: oscillation (2 of 2)",0 of 2,NO,analysis/tests_robustness_contraction.py,"damped by 0.25, fixed oscillates"
+1,6,2026-09-30,Brake within one loop of r on held-out models,"3 of 3 (loops 8, 16, 7)",YES,analysis/tests_landing.py,held-out fixed_r
+2,6,2026-09-30,Contraction rate constant across data,"q=0.95 at 1.5B, outside [0.89,0.94]",NO,analysis/tests_landing.py,contraction rate constant across data
+3,6,2026-09-30,"Same path length at 1.5B (ratio r=16/r=8 in [0.85,1.15])",1.04,YES,analysis/tests_landing.py,same path length at 1.5B tokens
+4,6,2026-10-01,Oscillation: >=80% of uninspected fixed models with two minima,11 of 16,NO,analysis/tests_wave.py,oscillation: uninspected full-backprop fixed models
+5,6,2026-10-01,Amplitude grows with data,"0.24->0.50, 0.19->0.51",YES,analysis/tests_wave.py,amplitude grows with data
+6,6,2026-10-01,"q and P associated (Spearman >=0.7, r=8)",0.78,YES,analysis/tests_wave.py,q and P associated within r = 8
+7,6,2026-10-01,"Brake and amplitude, all fixed models (<=-0.6)","0.00 (within r=8: -0.91, exploratory)",NO,analysis/tests_wave.py,"brake and amplitude, all full-backprop fixed"
+8,6,2026-10-01,Curves collapse in (k-r)/r,0.81 against 0.46 (partly post hoc),YES,analysis/tests_wave.py,curves collapse in (k - r)/r
+9,6,2026-10-01,State: second loss minimum on a minimum of ||s_k-s_r||,12 of 15,YES,analysis/tests_wave.py,state: second loss minimum on a minimum
+10,6,2026-10-01,State: closer to loops 1..r at loss minima than at maxima,15 of 15,YES,analysis/tests_wave.py,state: closer to loops 1..r at loss minima
+11,6,2026-10-01,State: closer to s_r after one period than after half,14 of 15,YES,analysis/tests_wave.py,state: closer to s_r after one period
+12,6,2026-10-01,State: detrended loss and distance oscillate together (|corr|>=0.6),15 of 15,YES,analysis/tests_wave.py,state: detrended loss and distance oscillate together
+13,6,2026-10-01,State: a linear readout of the state follows the loss (Pearson >=0.7),8 of 15,grey,analysis/tests_wave.py,state: a linear readout of the state
+14,6,2026-10-01,Loop decoder R^2>=0.9,2 of 15,NO,analysis/tests_decoder.py,loop decoder R^2 >= 0.9
+15,6,2026-10-01,Decoder gap is not trivial (loops 1..4),0.83 against -0.73,YES,analysis/tests_decoder.py,decoder on loops 1..4
+16,6,2026-10-01,Decoded index restarts / step profile repeats / minima match the loss,"8, 1, 2 of 15",NO,analysis/tests_decoder.py,decoded index restarts | step profile repeats with period r | minima of the decoded index
+17,6,2026-10-01,Loss decrease accelerates before r,4 of 4,YES,analysis/tests_landing.py,loss decrease accelerates before r
+18,6,2026-10-01,State returns to the slow phase,0 of 15,NO,analysis/tests_landing.py,state returns to the slow phase
+19,6,2026-10-01,Amplitude follows the acceleration of the loss,0.79,YES,analysis/tests_landing.py,amplitude follows the acceleration of the loss
+20,6,2026-10-01,"Excursion ranks with the step at loop r, as a linear bound predicts (Spearman >=0.6)",0.43,grey,analysis/tests_landing.py,excursion after r ranks with the step at loop r
+21,6,2026-10-01,Step grows before r in fixed models (>=70%),6 of 14; Poisson monotone 6 of 6,NO,analysis/tests_landing.py,step grows before r in fixed models
+22,6,2026-10-01,Fixed more non-normal than Poisson at r-1,0 of 14,NO,analysis/tests_landing.py,fixed more non-normal than every Poisson
+23,6,2026-10-01,Non-normality follows the acceleration of the loss,0.39,grey,analysis/tests_landing.py,non-normality at r - 1 follows the acceleration
+24,6,2026-10-01,"Brake and amplitude, unused truncated models (<=-0.6)",+0.66 (6 models),NO,analysis/tests_landing.py,brake and amplitude in the truncated models
+25,6,2026-10-01,Per token: median correlation with the average oscillation >=0.5,3 of 15,grey,analysis/tests_geometry.py,per token: median correlation
+26,6,2026-10-01,Per token: top 10% of tokens carry <=50% of the amplitude,0 of 15 (>=80%: 8 of 15),grey,analysis/tests_geometry.py,per token: top 10%
+27,6,2026-10-01,"Non-normality minimum within max(2,r/4) of r, all loops (>=70%)",12 of 14; Poisson flat 6 of 6,YES,analysis/tests_landing.py,"non-normality minimum within max(2, r/4)"
+28,6,2026-10-01,Editing the temporal coordinate moves the landing (>=70%),0 of 12 (no shift in 12 of 12),NO,analysis/tests_decoder.py,editing the temporal coordinate moves the landing
+29,6,2026-10-01,Random edits of the same size leave the landing in place,48 of 48,YES,analysis/tests_decoder.py,random edits of the same size
+30,6,2026-10-01,"Loss after r quadratic in the displacement, R^2>=0.8 (>=70%)",10 of 15,grey,analysis/tests_geometry.py,loss after r quadratic in the displacement
+31,6,2026-10-01,"Steps after r planar (two modes >=80% of energy, >=70%)",15 of 15,YES,analysis/tests_geometry.py,steps after r planar
+32,6,2026-10-01,"First loss minimum after one full turn of the step (+-30%, >=70%)",13 of 15,YES,analysis/tests_geometry.py,first loss minimum after one full turn
+33,6,2026-10-01,"Period from the angular velocity before r (+-30%, >=70%)",7 of 15,NO,analysis/tests_geometry.py,period from the angular velocity before r
+34,6,2026-10-01,Damping of the state oscillation per period equals rho^P (Spearman >=0.6),0.27,NO,analysis/tests_geometry.py,damping of the state oscillation per period
+35,6,2026-10-01,Ouro: brake within one loop of 4,"2 of 2 (loops 3, 4)",YES,analysis/tests_public.py,brake within one loop of 4
+36,6,2026-10-01,Ouro: loss lowest at 3 to 5 and higher at 8,2 of 2,YES,analysis/tests_public.py,loss lowest at 3 to 5 and higher at 8
+37,6,2026-10-01,Ouro: loss minimum in loops 9 to 13,1.4B by the letter (dip 0.009); 2.6B no,grey,analysis/tests_public.py,loss minimum in loops 9 to 13
+38,6,2026-10-01,Ouro: non-normality minimum within 2 loops of 4,0 of 2,NO,analysis/tests_public.py,non-normality minimum within 2 loops of 4
+39,6,2026-10-01,Ouro: steps after 4 planar (>=80% in two modes),"0 of 2 (76%, 78%)",NO,analysis/tests_public.py,steps after 4 planar
+40,6,2026-10-01,Public random-depth: no brake at mean r (>=4 of 5),5 of 5,YES,analysis/tests_public.py,no brake at the mean depth
+41,6,2026-10-01,Public random-depth: loss after mean r moves <0.02,5 of 5,YES,analysis/tests_public.py,loss after the mean depth moves
+42,6,2026-10-01,Public random-depth: state within 5% of s_mean r,5 of 5,YES,analysis/tests_public.py,state within 5% of the state at the mean depth
+43,6,2026-10-01,Public random-depth: non-normality varies <0.1 around mean r,4 of 5 (1.3B: 0.16),YES,analysis/tests_public.py,non-normality varies < 0.1 around the mean depth
+44,6,2026-10-01,Turning angle before r collapses as r alpha(k/r) (CV <=0.25 and <= half of unscaled),0.07 against 0.24,YES,analysis/tests_scaling.py,turning angle before r as r*alpha
+45,6,2026-10-01,Step before r collapses as r n(k/r) (same rule),0.12 against 0.41,YES,analysis/tests_scaling.py,step before r as r*n
+46,6,2026-10-01,Period from the phase defined (Theta=2pi within 3r; >=80%),22 of 24 (not decay 0.9),YES,analysis/tests_scaling.py,period from the phase defined
+47,6,2026-10-01,Phase period scales with r in the baseline (CV of P_Theta/r<=0.2),0.16,YES,analysis/tests_scaling.py,phase period scales with r
+48,6,2026-10-01,q and P_Theta/r associated (Spearman >=0.6; same models as the exploratory 0.71),0.73,YES,analysis/tests_scaling.py,q and P_Theta/r associated
+49,7,2026-10-02,Log-stretch before r collapses as r lambda(k/r) (same rule as the steps),0.09 against 0.20,YES,analysis/tests_scaling.py,log-stretch before r as r*lambda
+50,7,2026-10-02,Log-stretch summed over loops r/2..r constant in r (CV <=0.15 and <= half of last four loops),0.02 against 0.22,YES,analysis/tests_scaling.py,log-stretch summed over loops
+51,7,2026-10-02,Log-stretch after r collapses as r lambda(k/r) (same rule),0.11 against 0.18,NO,analysis/tests_landing.py,log-stretch after r collapses
+52,7,2026-10-02,"Period from the angular velocity at landing (+-30%, >=70%)",9 of 22 (median ratio 0.60),NO,analysis/tests_landing.py,period from the angular velocity at landing
+53,7,2026-10-02,"Non-normality follows the log-stretch loop by loop (Spearman >=0.6, >=70%)",6 of 15,NO,analysis/tests_landing.py,non-normality follows the log-stretch loop by loop
+54,7,2026-10-02,Period from the phase on 8 sequences within 15% of 4 sequences (>=80%),22 of 22,YES,analysis/tests_plane_dynamics.py,period from the phase on 8 sequences
+55,7,2026-10-02,"Period from the slowest mode of the Jacobian at the fixed point (+-30%, >=70%)",7 of 22,NO,analysis/tests_plane_dynamics.py,period from the slowest mode
+56,7,2026-10-02,Rotation angle at the fixed point collapses as r theta^* (CV <=0.2 and <= half),0.17 against 0.46,YES,analysis/tests_plane_dynamics.py,rotation angle at the fixed point collapses
+57,7,2026-10-02,Switching off the MLP path halves the rotation angle at the fixed point (>=70%),22 of 24,YES,analysis/tests_plane_dynamics.py,switching off the MLP path
+58,7,2026-10-02,Angle removed with the MLP path collapses as r Delta theta (CV <=0.25),0.30,grey,analysis/tests_plane_dynamics.py,angle removed with the same path
+59,7,2026-10-02,"Update scaled by gamma after r stretches the period by 1/gamma (+-25%, >=70%)",16 of 22,YES,analysis/tests_plane_dynamics.py,update scaled by gamma after r stretches the period
+60,7,2026-10-02,Update scaled by 1/2 from the start: loss at 2r within 0.02 of L_r (>=70%),16 of 21,YES,analysis/tests_plane_dynamics.py,update scaled by 1/2 from the start
+61,7,2026-10-02,Update scaled by 2 from the start: loss at r/2 below the trained loop (>=70%),1 of 21,NO,analysis/tests_plane_dynamics.py,update scaled by 2 from the start
+62,7,2026-10-02,Update scaled by 2/3 from the start: loss at 3r/2 within 0.02 of L_r (>=70%),17 of 21,YES,analysis/tests_plane_dynamics.py,update scaled by 2/3 from the start
+63,7,2026-10-02,Freezing the attention weights after r halves the rotation (>=70%),0 of 24,NO,analysis/tests_plane_dynamics.py,freezing the attention weights after r
+64,7,2026-10-02,"Period is one turn at the Jacobian's rotation at landing (+-30%, >=70%)",17 of 22,YES,analysis/tests_plane_dynamics.py,period is one turn at the Jacobian's rotation
+65,7,2026-10-02,"Decay carries the 1/r scale (slope of log(1-mean A) against log r in [-1.3,-0.7])",-0.22,NO,analysis/tests_euler.py,decay carries the 1/r scale
+66,7,2026-10-02,"Exact phase arg(1+gamma(mu-1)) beats 1 for the period ratio (>=2/3, median error <=0.08)","30 of 42, 0.05",YES,analysis/tests_euler.py,exact phase arg(1 + gamma(mu - 1))
+67,7,2026-10-02,"Doubled step unstable in the plane at r/2 (|2mu-1|>1 where the halved loop fails, >=2/3)",0 of 21,NO,analysis/tests_euler.py,doubled step unstable in the plane
+68,7,2026-10-02,Trained loop within 0.02 of its continuous limit (r'=8r; >=2/3),5 of 21,NO,analysis/tests_euler.py,trained loop within 0.02 of its continuous limit
+69,7,2026-10-02,"Same limit curve for r=8,12,16 (max deviation <=0.05)","0.017; yes by the letter, but not informative: normalised by the loss of the random initial state",YES,analysis/tests_euler.py,"same limit curve for r = 8, 12, 16"
+70,7,2026-10-02,Richardson extrapolation lowers the loss by >=0.01 (>=2/3),0 of 21,NO,analysis/tests_euler.py,Richardson extrapolation lowers the loss
+71,7,2026-10-02,"Small step from cancellation (net/first part <=0.5, cosine <=-0.5; >=2/3)",14 of 21,YES,analysis/tests_euler.py,small step from cancellation
+72,7,2026-10-02,Same field across depths: direction (>=0.8 of seed-to-seed cosine and >= null +0.2; >=2/3),5 of 9 (no cell below half),grey,analysis/tests_field.py,"same field across depths 8, 12, 16, direction"
+73,7,2026-10-02,"Same field across depths: norm after the factor r (ratio in [0.75,1.33]; >=2/3)",9 of 9,YES,analysis/tests_field.py,"same field across depths 8, 12, 16, norm"
+74,7,2026-10-03,Update doubled after two trained loops: loss at t=1 within 0.10 of L_r (>=2/3),0 of 21,NO,analysis/tests_scaled_update.py,update doubled after two trained loops
+75,7,2026-10-03,"Same, below the trained loop stopped at the same loop (>=2/3)",4 of 21,NO,analysis/tests_scaled_update.py,"same, below the trained loop stopped"
+76,7,2026-10-03,"Same, below the update doubled from the start (>=2/3)",19 of 21,YES,analysis/tests_scaled_update.py,"same, below the update doubled from the start"
+77,7,2026-10-03,"Downstream: mean accuracy at the loss peak in (r,2r] at least one point below loop r (>=2/3)",11 of 21,grey,analysis/tests_scaled_update.py,"accuracy at the loss peak in (r, 2r]"
+78,7,2026-10-03,Downstream: accuracy at the next loss minimum 0.5 points above the peak (>=2/3),5 of 15,NO,analysis/tests_scaled_update.py,accuracy at the next loss minimum
+79,7,2026-10-03,Downstream: update scaled by 1/2 keeps the accuracy at 2r within one point of loop r (>=2/3),20 of 21,YES,analysis/tests_scaled_update.py,update scaled by 1/2 keeps the accuracy
+80,7,2026-10-03,Downstream: Poisson accuracy varies by at most one point over loops 8 to 32 (>=5 of 6),6 of 6,YES,analysis/tests_scaled_update.py,Poisson accuracy varies by at most one point
+81,7,2026-10-03,Update scaled by 1/2: state at 2r closer to s_r than the trained loop at 2r (>=70%),21 of 21,YES,analysis/tests_scaled_update.py,update scaled by 1/2: state at 2r closer to s_r
+82,7,2026-10-03,Same: state at 2r within one trained step of s_r (>=70%),17 of 21,YES,analysis/tests_scaled_update.py,same: state at 2r within one trained step
+83,7,2026-10-03,"Same: period after landing, in units of r', within 25% of the trained one in units of r (>=70%)",13 of 18,YES,analysis/tests_scaled_update.py,same: period after landing in units of r'
+84,8,2026-10-03,Poisson through every loop: brake at 8 and oscillation (2 of 2),"brake 0 of 2, oscillation 0 of 2",NO,analysis/tests_controls.py,Poisson through every loop
+85,8,2026-10-03,Fixed r=8 truncated to 4: brake within one loop of r (2 of 2),1 of 2,grey,analysis/tests_controls.py,fixed r=8 truncated to 4
+86,8,2026-10-03,Loss at every loop: brake (2 of 2) and no oscillation,brake 0 of 2,NO,analysis/tests_controls.py,loss at every loop: brake
+87,8,2026-10-03,"Poisson with decay 0.9 reaches the contraction of the fixed models (q>=0.76, 2 of 2)","q=0.65, 0.66",NO,analysis/tests_controls.py,Poisson with decay 0.9 reaches q
+88,8,2026-10-03,New fixed: brake within one loop of r (>=90%),"7 of 10 (not r=24, r=20 s1)",NO,analysis/tests_controls.py,new fixed: lowest lambda within one loop of r
+89,8,2026-10-03,"Exponents of step, angle, log-stretch over r=6..24: 90% interval contains one","1.36, 0.60, 0.67; none",NO,analysis/tests_controls.py,exponent of the step | exponent of the angle | exponent of the log-stretch
+90,8,2026-10-03,"Step before r collapses as r n(k/r), r=6..24 (CV <=0.25 and <= half)",0.18 against 0.57,YES,analysis/tests_controls.py,collapse of r*step
+91,8,2026-10-03,"Angle before r collapses as r alpha(k/r), r=6..24 (same rule)",0.25 against 0.31,NO,analysis/tests_controls.py,collapse of r*angle
+92,8,2026-10-03,"Log-stretch before r collapses as r lambda(k/r), r=6..24 (same rule)",0.16 against 0.30,NO,analysis/tests_controls.py,collapse of r*log-stretch
+93,8,2026-10-03,"New fixed: P_Theta/r in [1.6,2.5] (>=2/3 of those with P_Theta)",2 of 6,NO,analysis/tests_controls.py,"new fixed: P_Theta/r in [1.6, 2.5]"
+94,8,2026-10-03,"All baseline fixed, r=4..24: CV of P_Theta/r<=0.25",0.22 (14 models),YES,analysis/tests_controls.py,all baseline fixed r=4..24: CV of P_Theta/r
+95,8,2026-10-03,"New fixed: update scaled by 1/2, loss at 2r within 0.02 of L_r (>=2/3)",7 of 10,YES,analysis/tests_controls.py,new fixed: update scaled by 1/2
+96,8,2026-10-03,"Baseline fixed, r=4..24: rphi_r constant (CV <=0.20; no above 0.30)",0.28,grey,analysis/tests_controls.py,r*phi_r constant over 18 baseline
+97,8,2026-10-03,"New fixed: rphi_r in [2.4,4.0] (>=2/3)",8 of 10,YES,analysis/tests_controls.py,"new fixed: r*phi_r in [2.4, 4.0]"
+98,8,2026-10-03,New fixed: one turn at phi_r within 30% of P_Theta (>=70%),4 of 7,NO,analysis/tests_controls.py,new fixed: one turn at phi_r
+99,8,2026-10-03,"New fixed: without attention and without MLP, each leaves 0.2 to 0.7 of phi_r (>=2/3)",9 of 10,YES,analysis/tests_controls.py,new fixed: without attention and without MLP
+100,8,2026-10-03,Same steps across neighbouring depths 6..24: direction (>=0.8 of seed-to-seed cosine and >= null +0.2; >=2/3),21 of 36 (no cell below half),grey,analysis/tests_field.py,"same field across neighbouring depths 6..24, direction"
+101,8,2026-10-03,"Same steps across neighbouring depths: norm after the factor r (ratio in [0.75,1.33]; >=2/3)",31 of 36,YES,analysis/tests_field.py,"same field across neighbouring depths 6..24, norm"
+102,8,2026-10-04,"New sequences: lowest lambda_k within one loop of r (fixed, r<=16, >=6/7; none in the 3 controls)",7 of 7; controls 3 of 3,YES,analysis/tests_robustness_contraction.py,"new sequences, lowest lambda within one loop"
+103,8,2026-10-04,32 directions: lowest lambda_k within one loop of that with 16 (>=11/13),12 of 13,YES,analysis/tests_robustness_contraction.py,"32 directions, lowest lambda"
+104,8,2026-10-04,New sequences: two leading modes >=80% and third mode <=10% after r (>=4/5 each),5 of 5; 5 of 5,YES,analysis/tests_robustness_contraction.py,"new sequences, two modes >= 80%"
+105,8,2026-10-04,P_Theta from windows to 3r and to 6r within 15% of the window to 4r (>=2/3),5 of 5; 8 of 8,YES,analysis/tests_robustness_contraction.py,P_Theta from the window r_3r | P_Theta from the window r_6r
+106,8,2026-10-04,P_Theta on new sequences within 15% of the original ones (>=2/3),8 of 8,YES,analysis/tests_robustness_contraction.py,P_Theta on new sequences
+107,8,2026-10-04,New sequences: same oscillation verdict (>=10/13; no control oscillates),12 of 13; 0 of 3,YES,analysis/tests_robustness_contraction.py,"new sequences, same oscillation verdict"
+108,8,2026-10-03,"Ouro, update scaled by 1/2: loss at loop 8 within 0.02 of L_4 (2 of 2)",2.6B +0.004; 1.4B +0.035,grey,analysis/tests_controls.py,"Ouro, update scaled by 1/2: loss at loop 8"
+109,8,2026-10-03,"Ouro, same: loss at loop 8 below the trained loop at 8 (2 of 2)",2 of 2,YES,analysis/tests_controls.py,"Ouro, same: loss at loop 8 below"
+110,8,2026-10-03,"Ouro, same: |L^1/2|_2k-L_k<=0.05 for k=2,3,4 (2 of 2)",2.6B 0.010; 1.4B 0.100,grey,analysis/tests_controls.py,"Ouro, same: |L_2k - L_k|"
+111,8,2026-10-04,"Damped by 0.1, Poisson and fixed: q>=0.85 (4 of 4)",0.91 to 0.97,YES,analysis/tests_robustness_contraction.py,"damped by 0.1, q >= 0.85"
+112,8,2026-10-04,Damped Poisson: no brake and loss rise from r to 2r <=0.005 (2 of 2),"no brake 2 of 2; rise 0.014, 0.015",grey,analysis/tests_robustness_contraction.py,"damped by 0.1, Poisson without brake"
+113,8,2026-10-04,Damped fixed: brake and loss rise from r to 2r >=0.02 (2 of 2),"brake 0 of 2; rise 0.19, 0.23",NO,analysis/tests_robustness_contraction.py,"damped by 0.1, fixed with brake"
+114,8,2026-10-04,Damped by 0.25: q>=0.80 (4 of 4) and mean q of Poisson and fixed within 0.03,0.84 to 0.93; gap 0.08,NO,analysis/tests_robustness_contraction.py,"damped by 0.25, q >= 0.80"
+115,8,2026-10-04,"Damped by 0.25, Poisson: no brake and loss rise from r to 2r <=0.02 (2 of 2)","no brake 2 of 2; rise 0.005, 0.008",YES,analysis/tests_robustness_contraction.py,"damped by 0.25, Poisson without brake"
+116,8,2026-10-04,"Damped by 0.25, fixed: brake and loss rise from r to 2r >=0.02 (2 of 2)","brake 0 of 2; rise 0.12, 0.12",NO,analysis/tests_robustness_contraction.py,"damped by 0.25, fixed with brake"
+117,8,2026-10-04,"Damped by 0.25, fixed: oscillation (2 of 2)",0 of 2,NO,analysis/tests_robustness_contraction.py,"damped by 0.25, fixed oscillates"
+118,8,2026-10-10,472M: L_r below the 114M model (3 of 3),"2.82, 2.81, 2.84 against 3.40, 3.41",YES,analysis/tests_scale.py,472M: L_r below the 114M model
+119,8,2026-10-10,472M fixed: lowest lambda_k within one loop of r (2 of 2),"2 of 2 (loop 8; relative brake -0.23, -0.22)",YES,analysis/tests_scale.py,472M fixed: lowest lambda within one loop of r
+120,8,2026-10-10,472M Poisson: lowest lambda_k not within one loop of r,loop 6,YES,analysis/tests_scale.py,472M Poisson: lowest lambda not within one loop of r
+121,8,2026-10-10,472M fixed: oscillation (2 of 2),1 of 2,grey,analysis/tests_scale.py,472M fixed: oscillation
+122,8,2026-10-10,"472M: rise in (r,2r] >=0.02 (fixed), <=0.02 (Poisson)","0.69, 0.48; <0.001",YES,analysis/tests_scale.py,"472M: rise in (r, 2r]"
+123,8,2026-10-10,472M fixed: two leading modes >=80% after r (2 of 2),"92%, 91%",YES,analysis/tests_scale.py,472M fixed: two leading modes

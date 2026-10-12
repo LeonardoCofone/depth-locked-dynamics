@@ -17,9 +17,10 @@ PRESETS = {
     "muon": dict(optimizer="muon", lr=8e-3, betas=(0.8, 0.95), eps=1e-10, wd=0.0, warmup=0.0, batch=512),
     "width768": dict(d=768, heads=6, ffn=3072, value_embeddings=0, qk_norm_style="learned", init_style="simple",
                      tokens=1e9),
+    "large": dict(d=1792, heads=28, ffn=7168, tokens=3e9),
 }
 
-DEFAULT_TOKENS = {"base": 5e8, "muon": 5e8, "width768": 1e9}
+DEFAULT_TOKENS = {"base": 5e8, "muon": 5e8, "width768": 1e9, "large": 3e9}
 
 
 def run_name(cfg):
@@ -68,6 +69,6 @@ def from_original(c):
     cfg["qk_norm_style"] = c.get("qk_norm_style") or "learned"
     cfg["init_style"] = c.get("init_style") or "simple"
     cfg["betas"] = tuple(c.get("betas") or DEFAULTS["betas"])
-    cfg["preset"] = "width768" if cfg["d"] == 768 else ("muon" if cfg["optimizer"] == "muon" else "base")
+    cfg["preset"] = {768: "width768", 1792: "large"}.get(cfg["d"], "muon" if cfg["optimizer"] == "muon" else "base")
     cfg["name"] = run_name(cfg)
     return cfg

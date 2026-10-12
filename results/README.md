@@ -6,7 +6,8 @@ The measurements behind the paper, as written by `measure/`. Nothing here is edi
 
 One folder per trained model, named as in `loopedlm/config.py` (for example `fixed_r8_b8_s0`, `poisson_r8_b4_muon_s1`,
 `fixed_r16_b16_D1500M_s0`). 51 models make up the model table of the paper; the others are the contraction
-experiments: the pilot at 0.1B tokens (`_D100M`) and the recipes with the update damped in training (`_us`).
+experiments (the pilot at 0.1B tokens, `_D100M`, and the recipes with the update damped in training, `_us`) and the
+scale check (three models of 472M parameters trained on 3B tokens, `_d1792`).
 
 | file | written by | content |
 |---|---|---|

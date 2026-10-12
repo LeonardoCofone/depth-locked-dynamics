@@ -17,6 +17,7 @@ CONTRACTION = ["fixed_r8_b8_D100M_s0", "poisson_r8_b32_us0.25_D100M_s0", "poisso
                "poisson_r8_b32_dec0.95_dfz_D100M_s0", "fixed_r8_b8_all_us0.25_D100M_s0"]
 CONTRACTION += ["poisson_r8_b32_us0.1_s%d" % s for s in (0, 1)] + ["fixed_r8_b8_us0.1_s%d" % s for s in (0, 1)]
 CONTRACTION += ["poisson_r8_b32_us0.25_s%d" % s for s in (0, 1)] + ["fixed_r8_b8_us0.25_s%d" % s for s in (0, 1)]
+SCALE = ["fixed_r8_b8_d1792_s0", "fixed_r8_b8_d1792_s1", "poisson_r8_b32_d1792_s0"]
 
 
 def model_names():
@@ -24,7 +25,7 @@ def model_names():
 
 
 def paper_models():
-    return [d for d in model_names() if d not in CONTRACTION]
+    return [d for d in model_names() if d not in CONTRACTION and d not in SCALE]
 
 
 def first_grid():

@@ -10,7 +10,7 @@ depth-locked-dynamics/
 │   └── field_alignment/ the alignment of the loop field across models
 ├── analysis/      the tables and the registered tests, recomputed from results/
 ├── figures/       the figures of the paper, drawn from results/
-├── registry/      the 117 registered tests: threshold date, outcome, verdict, script
+├── registry/      the 123 registered tests: threshold date, outcome, verdict, script
 ├── configs/       the training command of every model
 ├── assets/        the logo
 └── tests/         an end-to-end smoke test on the CPU and the check of the phase estimator
@@ -33,6 +33,6 @@ CPU in about a minute.
 
 A run is named `<sampling>_r<depth>_b<backprop>[_<variant>]_s<seed>`, for example `fixed_r8_b8_s0` (fixed depth 8,
 gradient through all 8 loops, seed 0) or `poisson_r8_b4_s1` (random depth with mean 8, gradient through the last 4
-loops, seed 1). The variants are `muon` (optimizer), `d768` (width), `dec0.7`, `dec0.9` and `dec0.95` (initial decay),
-`all` (loss at every loop), `us0.1` and `us0.25` (update damped in training), `dfz` (decay frozen) and `D100M`, `D1500M`
-(training tokens).
+loops, seed 1). The variants are `muon` (optimizer), `d768` and `d1792` (width), `dec0.7`, `dec0.9` and `dec0.95`
+(initial decay), `all` (loss at every loop), `us0.1` and `us0.25` (update damped in training), `dfz` (decay frozen)
+and `D100M`, `D1500M` (training tokens).
