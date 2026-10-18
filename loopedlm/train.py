@@ -83,10 +83,10 @@ def train(cfg, data, runs):
         ck = torch.load(latest, map_location=dev, weights_only=False)
         model.load_state_dict(ck["model"])
         opt.load_state_dict(ck["opt"])
-        batches.g.set_state(ck["data_rng"])
-        depth_gen.set_state(ck["depth_rng"])
-        state_gen.set_state(ck["state_rng"])
-        torch.set_rng_state(ck["torch_rng"])
+        batches.g.set_state(ck["data_rng"].cpu())
+        depth_gen.set_state(ck["depth_rng"].cpu())
+        state_gen.set_state(ck["state_rng"].cpu())
+        torch.set_rng_state(ck["torch_rng"].cpu())
         start = ck["step"]
     else:
         json.dump({"config": cfg, "steps": steps, "accum": accum, "n_params": n_params,
