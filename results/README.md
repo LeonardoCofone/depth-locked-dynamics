@@ -12,7 +12,7 @@ scale check (three models of 472M parameters trained on 3B tokens, `_d1792`).
 | file | written by | content |
 |---|---|---|
 | `run_info.json` | `loopedlm.train` | Resolved configuration, number of steps and parameters. |
-| `train_log.jsonl`, `eval_log.jsonl` | `loopedlm.train` | Every 20 steps: training loss, learning rate, gradient norm, time, mean depth and the range of the decay. Every 500 steps: validation loss at depths 1 to 32. |
+| `train_log.jsonl`, `eval_log.jsonl` | `loopedlm.train` | Every 20 steps: training loss, learning rate, gradient norm, time, mean depth and the range of the decay. Every 500 steps: validation loss at depths 1, 2, 4, 6, 8, 12, 16, 24 and 32. |
 | `curves.json` | `measure.curves` | `per_k[k]`: loss and step statistics after `k` loops; `step_norm_median[k]`: median step over the tokens of the first 8 sequences. |
 | `curves_tokens.npz` | `measure.curves` | Loss and step of every token (8 sequences); kept only for the 15 models of the per-token tests. |
 | `lyapunov.json` | `measure.lyapunov` | `lyap[k][i]`: log-stretch of direction `i` at loop `k + 1`. |

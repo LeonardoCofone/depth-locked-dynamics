@@ -3,8 +3,8 @@
 Scripts that load a trained model and write what the paper measures. Each script for our models runs over every trained
 run in `--runs` (or those whose name contains `--only`), skips the runs it has already measured unless `--redo 1`, and
 writes one file per run into `--out` (default `results/models/<run>/`). Some scripts measure only the runs they apply to
-(for example `r >= 4` for `plane_dynamics.py`). They read the same 64 validation sequences (`robustness.py` draws 64 new
-ones, `downstream.py` reads the task file) and start from the same initial state (seed 7), so measurements of different
+(for example `r >= 4` for `plane_dynamics.py`). They take their sequences from the same pool of 64 validation sequences (`robustness.py`
+draws a new pool, `downstream.py` reads the task file) and start from the same initial state (seed 7), so measurements of different
 scripts refer to the same trajectory. `field_alignment.py` and the `public_*` scripts take their models explicitly.
 
 ```

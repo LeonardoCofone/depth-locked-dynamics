@@ -12,7 +12,6 @@ depth-locked-dynamics/
 ├── figures/       the figures of the paper, drawn from results/
 ├── registry/      the 127 registered tests: threshold date, outcome, verdict, script
 ├── configs/       the training command of every model
-├── assets/        the logo
 └── tests/         an end-to-end smoke test on the CPU and the check of the phase estimator
 ```
 

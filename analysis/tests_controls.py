@@ -107,7 +107,7 @@ def ouro_scaled():
           % two_seeds(sum(v["c1"] <= 0.02 for v in out.values()), n))
     print("Ouro, same: loss at loop 8 below the trained loop at 8 -> %s"
           % two_seeds(sum(v["c2"] for v in out.values()), n))
-    print("Ouro, same: |L_2k - L_k| <= 0.05 for k = 2, 3, 4 -> %s"
+    print("Ouro, same: L_2k within 0.05 of L_k for k = 2, 3, 4 -> %s"
           % two_seeds(sum(v["c3"] <= 0.05 for v in out.values()), n))
 
 

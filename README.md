@@ -1,8 +1,4 @@
-<h1 align="center">Depth-Locked Dynamics in Looped Language Models</h1>
-
-<p align="center">
-  <img src="assets/logo.svg" alt="Depth-Locked Dynamics" width="200">
-</p>
+# Depth-Locked Dynamics in Looped Language Models
 
 Code, measurements and the test registry for the paper *Depth-Locked Dynamics in Looped Language Models*.
 

@@ -112,7 +112,7 @@ id,table,registered,test,outcome,verdict,script,output
 111,8,2026-10-04,New sequences: same oscillation verdict (>=10/13; no control oscillates),12 of 13; 0 of 3,YES,analysis/tests_robustness_contraction.py,"new sequences, same oscillation verdict"
 112,8,2026-10-03,"Ouro, update scaled by 1/2: loss at loop 8 within 0.02 of L_4 (2 of 2)",2.6B +0.004; 1.4B +0.035,grey,analysis/tests_controls.py,"Ouro, update scaled by 1/2: loss at loop 8"
 113,8,2026-10-03,"Ouro, same: loss at loop 8 below the trained loop at 8 (2 of 2)",2 of 2,YES,analysis/tests_controls.py,"Ouro, same: loss at loop 8 below"
-114,8,2026-10-03,"Ouro, same: |L^1/2|_2k-L_k<=0.05 for k=2,3,4 (2 of 2)",2.6B 0.010; 1.4B 0.100,grey,analysis/tests_controls.py,"Ouro, same: |L_2k - L_k|"
+114,8,2026-10-03,"Ouro, same: |L^(1/2)_2k-L_k|<=0.05 for k=2,3,4 (2 of 2)",2.6B 0.010; 1.4B 0.100,grey,analysis/tests_controls.py,"Ouro, same: L_2k within 0.05 of L_k"
 115,8,2026-10-04,"Damped by 0.1, Poisson and fixed: q>=0.85 (4 of 4)",0.91 to 0.97,YES,analysis/tests_robustness_contraction.py,"damped by 0.1, q >= 0.85"
 116,8,2026-10-04,Damped Poisson: no brake and loss rise from r to 2r <=0.005 (2 of 2),"no brake 2 of 2; rise 0.014, 0.015",grey,analysis/tests_robustness_contraction.py,"damped by 0.1, Poisson without brake"
 117,8,2026-10-04,Damped fixed: brake and loss rise from r to 2r >=0.02 (2 of 2),"brake 0 of 2; rise 0.19, 0.23",NO,analysis/tests_robustness_contraction.py,"damped by 0.1, fixed with brake"
