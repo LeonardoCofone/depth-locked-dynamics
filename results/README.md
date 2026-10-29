@@ -26,6 +26,7 @@ scale check (three models of 472M parameters trained on 3B tokens, `_d1792`).
 | `doubled_update.json` | `measure.doubled_update` | Loss when the update is doubled after `k` trained loops. |
 | `downstream.json` | `measure.downstream` | Accuracy per task and loop, trained and with the update scaled by 1/2. |
 | `ritz.json` | `measure.ritz` | `k[loop]`: Ritz values `[real, imag]` sorted by modulus and their residuals `res`; first grid only. |
+| `step_gain.json` | `measure.step_gain` | `points[k<loop>]`: quantiles of `a` (planar restriction), `b` (full Jacobian along the step), `c` (true gain), precision checks, share of the step in the plane; `all_k`: medians at every loop from `r` to `3r - 1`; `geo_mean_r_3r`; `summary`. Nine fixed-depth models. |
 | `robustness.json` | `measure.robustness` | Log-stretch with 16 and 32 directions and step geometry on new sequences. |
 
 Indices: in `curves.json`, `per_k[k]` is the state after `k` loops (`k = 0` is the initial state). In the other files

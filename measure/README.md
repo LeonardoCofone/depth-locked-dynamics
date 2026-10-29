@@ -28,6 +28,7 @@ python -m measure.lyapunov --runs runs --data data
 | `prepare_downstream.py` | `data/downstream_tasks.jsonl` | Samples 1000 examples each of LAMBADA, HellaSwag, ARC-Easy and PIQA. |
 | `downstream.py` | `downstream.json` | Zero-shot accuracy of every loop, for the trained loop and the update scaled by 1/2. |
 | `ritz.py` | `ritz.json` | Ritz values of the Jacobian of one loop at loops `r/2`, `r`, `2r` and `4r` from 48 Arnoldi steps on 2 sequences of 256 tokens, with the residual of each value. |
+| `step_gain.py` | `step_gain.json` | After `r`, in float64 on 2 sequences of 256 tokens: the true gain of the step `|d_{k+1}|/|d_k|`, the full Jacobian applied to the step and its restriction to the plane of the steps in `[r, 4r)`, at loops `r`, `3r/2`, `2r`, `3r` (with precision checks) and at every loop from `r` to `3r - 1` (fixed-depth models trained through every loop with `r >= 8`; the results include nine of them). |
 | `robustness.py` | `robustness.json` | The brake with 16 and 32 directions and the step geometry on new validation sequences. |
 | `public_random_depth.py` | `results/public/<model>/public_dynamics.json` | The same measures on the released Parcae and Huginn models (random depth). Needs their weights and, for Parcae, its source repository. |
 | `public_ouro.py` | `results/public/<model>/ouro_dynamics.json` | The same measures on Ouro 1.4B and 2.6B. Needs `transformers` 4.5x (tested with 4.56.2). |
